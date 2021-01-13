@@ -198,6 +198,16 @@
                 .topnav a{
                     max-width: 270px;
                 }
+
+                .img-max-contato {
+                    min-width: 500px;
+                    /* width:100%; */
+                }
+
+                .img-max-main {
+                    min-width: 500px;
+                    /* width:100%; */
+                }
             }
             
             @media screen and (max-width: 1024px){
@@ -268,22 +278,17 @@
                     max-width: 500px;
                     width:100%;
                 }
+
+                .img-max-main {
+                    max-width: 500px;
+                    width:100%;
+                }
             }
 
             .formata-texto{
                 color: #1f4280;
                 font-size: 2vmin;
                 font-weight: bold;
-            }
-
-            .img-max-contato {
-                min-width: 500px;
-                /* width:100%; */
-            }
-
-            .img-max-main {
-                max-width: 700px;
-                width:100%;
             }
 
         </style>

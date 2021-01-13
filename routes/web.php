@@ -17,6 +17,5 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/contato', function () {
-    return view('contato');
-});
+Route::get('/contato', 'ContatoController@form')->name('contato.form');
+Route::post('/contato', 'ContatoController@salvarPost')->name('contato.salvar.post');
