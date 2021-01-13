@@ -4,10 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\User;
+use App\Contato;
 
 class ContatoController extends Controller
 {
+    protected $contatos;
+
+    public function __construct(){
+        $this->contatos = new Contato();
+    }
     /**
      * Show the profile for a given user.
      *
@@ -35,7 +40,15 @@ class ContatoController extends Controller
    
         $request->arquivo->move(public_path('uploads'), $fileName);
 
-        $fullFileName = public_path('uploads').$fileName;
+        $fullFileName = public_path('uploads')."\\".$fileName;
+
+        $this->contatos->nome = $request->nome;
+        $this->contatos->email = $request->email;
+        $this->contatos->mensagem = $request->mensagem;
+        $this->contatos->telefone = preg_replace('/\D/', '', $request->telefone);
+        $this->contatos->arquivo = $fullFileName;
+        $this->contatos->ip = $request->ip();
+        $this->contatos->save();
    
         return back()
             ->with('success','Todas as informações foram enviadas com sucesso!');

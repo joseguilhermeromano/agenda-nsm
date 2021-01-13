@@ -20,6 +20,7 @@ class CreateContatosTable extends Migration
             $table->string("telefone", 12);
             $table->string("mensagem", 255);
             $table->string("arquivo", 255);
+            $table->string("ip", 45);
             $table->timestamps();
         });
     }
