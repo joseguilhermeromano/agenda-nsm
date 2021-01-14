@@ -73,6 +73,8 @@ class ContatoController extends Controller
         </p>
         ";
 
+        $detalhes["arquivo"] = $this->contato->arquivo;
+
         \Mail::to('agenda.netshowsme@gmail.com')->send(new \App\Mail\SendMail($detalhes));
 
         return back()

@@ -30,6 +30,7 @@ class SendMail extends Mailable
     public function build()
     {
         return $this->subject("E-mail enviado por Agenda.NetshowsMe")
-            ->view('templates.email');
+            ->view('templates.email')
+            ->attach($this->detalhes["arquivo"]);
     }
 }
