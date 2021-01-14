@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Contato;
+use Mail;
 
 class ContatoController extends Controller
 {
@@ -50,6 +51,16 @@ class ContatoController extends Controller
         $this->contatos->ip = $request->ip();
         $this->contatos->save();
    
+        return $this->enviarEmail();
+    }
+
+    public function enviarEmail(){
+
+        $detalhes["titulo"] = "Primeiro e-mail de teste com laravel";
+        $detalhes["corpo"] = "teste.";
+
+        \Mail::to('agenda.netshowsme@gmail.com')->send(new \App\Mail\SendMail($detalhes));
+
         return back()
             ->with('success','Todas as informações foram enviadas com sucesso!');
     }
