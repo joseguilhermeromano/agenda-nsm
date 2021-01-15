@@ -34,7 +34,7 @@ com base em artigos disponibilizados na internet.
 
 ## Sobre a Empresa 
 
-- Temos como missão ajudar empresas e organizações a construírem e sustentarem negócios por meio de tecnologias de vídeos online e transmissões ao vivo. Nos consolidamos como referência do setor e já recebemos diversos prêmios nacionais e internacionais pela nossa cultura de inovação, atendendo clientes de diversos portes e mercados como Oracle, Santander, XP Investimentos, B3 e centenas de outros.
+Temos como missão ajudar empresas e organizações a construírem e sustentarem negócios por meio de tecnologias de vídeos online e transmissões ao vivo. Nos consolidamos como referência do setor e já recebemos diversos prêmios nacionais e internacionais pela nossa cultura de inovação, atendendo clientes de diversos portes e mercados como Oracle, Santander, XP Investimentos, B3 e centenas de outros.
 
 [Netshow.me](https://netshow.me)
 
@@ -46,37 +46,38 @@ com base em artigos disponibilizados na internet.
 - Para acessar o e-mail criado para testes no projeto utilize as credenciais de acesso:
     E-mail: agenda.netshowsme@gmail.com Senha: @g3nd@&NSM
 - Crie um arquivo na raiz do projeto (agenda) e  nomeie como .env.
-- Nesse arquivo deve ter as seguintes configurações de acordo com sua máquina: 
+
+Nesse arquivo deve ter as seguintes configurações de acordo com sua máquina: 
 
 Primeiro, coloque as configurações básicas do projeto, como nome da aplicação, variavel de ambiente (ex:local), 
 a chave de segurança que será utilizada nos formulários com CSRF, URL da aplicação (no meu caso agenda.local é uma configuração
 personalizada, usando virtualhost do Apache):
 
-APP_NAME=agenda
-APP_ENV=local
-APP_KEY=base64:rRK7Uc5Dp0la3hVJu9K6NAuGgmDF2f9j+G1sEk5+hvw=
-APP_DEBUG=true
-APP_URL=http://agenda.local
+- APP_NAME=agenda
+- APP_ENV=local
+- APP_KEY=base64:rRK7Uc5Dp0la3hVJu9K6NAuGgmDF2f9j+G1sEk5+hvw=
+- APP_DEBUG=true
+- APP_URL=http://agenda.local
 
 Configurações de banco de dados:
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=agenda
-DB_USERNAME=root
-DB_PASSWORD=
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_PORT=3306
+- DB_DATABASE=agenda
+- DB_USERNAME=root
+- DB_PASSWORD=
 
 E por fim as configurações do servidor de e-mail:
 
-MAIL_MAILER=smtp
-MAIL_HOST=smtp.gmail.com
-MAIL_PORT=587
-MAIL_USERNAME=agenda.netshowsme@gmail.com
-MAIL_PASSWORD=@g3nd@&NSM
-MAIL_ENCRYPTION=tls
-MAIL_FROM_ADDRESS=agenda.netshowsme@gmail.com
-MAIL_FROM_NAME="${APP_NAME}"
+- MAIL_MAILER=smtp
+- MAIL_HOST=smtp.gmail.com
+- MAIL_PORT=587
+- MAIL_USERNAME=agenda.netshowsme@gmail.com
+- MAIL_PASSWORD=@g3nd@&NSM
+- MAIL_ENCRYPTION=tls
+- MAIL_FROM_ADDRESS=agenda.netshowsme@gmail.com
+- MAIL_FROM_NAME="${APP_NAME}"
 
 Lembrando que se for um e-mail configurado por você, certifique-se que no gmail (ou seu fornecedor de e-mails) 
 esteja com as configurações de smtp liberadas para dispositivos menos seguros, para que seja possível 
@@ -86,16 +87,16 @@ Observação: todas as informações são meramente fictícias e por isso estão
 não é recomendado a disponibilização do arquivo .env no repositório e muito menos informações
 que comprometam a segurança da aplicação.
 
-- Finalizando a etapa de configuração do arquivo .env, 
+Finalizando a etapa de configuração do arquivo .env, 
 salve o arquivo e execute o seguinte comando para aplicar as mudanças: 
 
-php artisan config:cache
+- php artisan config:cache
 
-- Agora é hora de rodar as migrations com o comando:
+Agora é hora de rodar as migrations com o comando:
 
-php artisan migrate
+- php artisan migrate
 
-- A configuração está pronta, divirta-se!!!
+A configuração está pronta, divirta-se!!!
 
 ## Conclusão
 
